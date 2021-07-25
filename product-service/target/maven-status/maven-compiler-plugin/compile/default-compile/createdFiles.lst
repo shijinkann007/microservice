@@ -1,0 +1,14 @@
+com/adidas/productservice/services/ProductService.class
+com/adidas/productservice/configuration/SwaggerConfiguration.class
+com/adidas/productservice/dto/GenericResponse.class
+com/adidas/productservice/exceptions/ConfigurationException.class
+com/adidas/productservice/discovery/ServiceDiscovery.class
+com/adidas/productservice/controllers/advices/RestExceptionHandler.class
+com/adidas/productservice/facade/ProductFacade.class
+com/adidas/productservice/util/GenericResponseUtils.class
+com/adidas/productservice/ProductServiceApplication.class
+com/adidas/productservice/exceptions/RestResponseException.class
+com/adidas/productservice/facade/ProductFacadeRestImpl.class
+com/adidas/productservice/controllers/ProductController.class
+com/adidas/productservice/exceptions/EntityNotFoundException.class
+com/adidas/productservice/annotations/Secured.class
