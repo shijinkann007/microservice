@@ -40,7 +40,7 @@ public class ReviewController {
 		if (reviewsByProductId.isEmpty()) {
 			throw new EntityNotFoundException("No reviews found for productId = " + productId);
 		}		 
- 		return ResponseEntity.ok(GenericResponseUtils.buildGenericResponseOK(reviewsByProductId));
+ 		return ResponseEntity.ok(GenericResponseUtils.buildGenericResponseOK(processReviews(productId,reviewsByProductId)));
 
 	}
 	@GetMapping
