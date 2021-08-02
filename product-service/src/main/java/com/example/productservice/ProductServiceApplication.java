@@ -10,7 +10,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableCaching
 public class ProductServiceApplication {
 
 	public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
