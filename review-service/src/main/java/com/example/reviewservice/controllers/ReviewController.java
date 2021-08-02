@@ -27,6 +27,7 @@ import com.example.reviewservice.entities.Review;
 import com.example.reviewservice.exceptions.EntityNotFoundException;
 import com.example.reviewservice.services.ReviewService;
 import com.example.reviewservice.util.GenericResponseUtils;
+import com.netflix.appinfo.InstanceInfo;
 
 @RestController
 @RequestMapping(path = "/api/review")
@@ -35,7 +36,7 @@ public class ReviewController {
 	@Autowired
 	private ReviewService service;
 	@GetMapping(value = "/{productId}")
- 	public ResponseEntity<GenericResponse> findById(@PathVariable @NonNull String productId) throws EntityNotFoundException, TimeoutException {	 
+ 	public ResponseEntity<GenericResponse> findById(@PathVariable @NonNull String productId) throws EntityNotFoundException {	 
 		List<Review> reviewsByProductId = service.getReviewsGeneralData(productId);
 		if (reviewsByProductId.isEmpty()) {
 			throw new EntityNotFoundException("No reviews found for productId = " + productId);
@@ -44,7 +45,6 @@ public class ReviewController {
 
 	}
 	@GetMapping
-	@Cacheable(value = "reviews")
 	public ResponseEntity<GenericResponse> getReviews() throws EntityNotFoundException {
 		List<Review> productReviews = service.findAll();
 		if (productReviews.isEmpty()) {
@@ -57,7 +57,15 @@ public class ReviewController {
 	@PostMapping
 	public ResponseEntity<GenericResponse> insertReview(@RequestBody @Valid Review review)
 			throws EntityNotFoundException {
-		Review reviewInserted = service.insert(review);
+		Review reviewInserted=null;
+		try {
+			 reviewInserted = service.insert(review);
+
+       }catch (RuntimeException e) {
+        	 return ResponseEntity.ok(GenericResponseUtils.buildGenericResponseError(e.getMessage()));
+       }
+		
+		
 		return ResponseEntity.ok(GenericResponseUtils.buildGenericResponseOK(reviewInserted));
 	}
 

@@ -1,6 +1,5 @@
 /Users/shijinkoyambil/Assignment/microservice/review-service/src/main/java/com/example/reviewservice/configuration/SwaggerConfiguration.java
 /Users/shijinkoyambil/Assignment/microservice/review-service/src/main/java/com/example/reviewservice/exceptions/ConfigurationException.java
-/Users/shijinkoyambil/Assignment/microservice/review-service/src/main/java/com/example/reviewservice/discovery/ServiceDiscovery.java
 /Users/shijinkoyambil/Assignment/microservice/review-service/src/main/java/com/example/reviewservice/exceptions/MissingTokenException.java
 /Users/shijinkoyambil/Assignment/microservice/review-service/src/main/java/com/example/reviewservice/services/ReviewService.java
 /Users/shijinkoyambil/Assignment/microservice/review-service/src/main/java/com/example/reviewservice/exceptions/RestResponseException.java
