@@ -11,8 +11,8 @@ SpringBoot application for products and reviews
 # Requirements
  - Java 11 
  - MongoDB Atlas
- - Docker or any server to host the services
-
+ - Docker - Docker File attached
+ 
 # API Testing
   Postman API tests are available 
 
